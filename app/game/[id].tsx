@@ -1,13 +1,10 @@
-import {View, Text} from 'react-native'
-import React from 'react'
-import {useLocalSearchParams} from "expo-router";
+import {View} from 'react-native';
+import React from 'react';
+import GameScreen from "@/screens/GameScreen";
+import {useSearchParams} from "expo-router/build/hooks";
 
-const GameScreen = () => {
-    const local = useLocalSearchParams();
-    return (
-        <View>
-            <Text>GameScreen: {local.id}</Text>
-        </View>
-    )
+const Game = () => {
+    const params = useSearchParams();
+    return <GameScreen id={params.get('id')}/>;
 }
-export default GameScreen;
+export default Game;
