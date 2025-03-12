@@ -2,8 +2,10 @@ import {View, TextInput, StyleSheet, Alert} from 'react-native'
 import React from 'react'
 import PrimaryButton from "../components/PrimaryButton";
 import {useState} from 'react';
+import { useRouter } from 'expo-router';
 
 const StartGameScreen = () => {
+    const router = useRouter();
     const [enteredNumber, setEnteredNumber] = useState('');
     const numberInputHandler = (text: string) => {
         setEnteredNumber(text);
@@ -22,8 +24,7 @@ const StartGameScreen = () => {
             );
             return;
         }
-
-        console.log('Valid number!');
+        router.replace(`/game/${chosenNumber}`);
     }
 
     return (
