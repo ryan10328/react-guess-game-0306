@@ -9,7 +9,9 @@ export default function RootLayout() {
                          resizeMode="cover"
                          style={styles.rootScreen}
                          imageStyle={styles.backgroundImage}>
-            <Slot/>
+            <SafeAreaView style={styles.rootScreen}>
+                <Slot/>
+            </SafeAreaView>
         </ImageBackground>
     </LinearGradient>;
 }

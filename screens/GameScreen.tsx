@@ -1,5 +1,6 @@
-import {View, Text, StyleSheet, SafeAreaView} from 'react-native'
+import {View, Text, StyleSheet} from 'react-native'
 import React from 'react'
+import Title from "@/components/Title";
 
 export type GameScreenProps = {
     id: string | null;
@@ -7,18 +8,20 @@ export type GameScreenProps = {
 
 const GameScreen = ({id}: GameScreenProps) => {
     return (
-        <SafeAreaView style={styles.screen}>
-            <Text>Opponent's Guess {id}</Text>
+        <View style={styles.screen}>
+            <Title/>
             {/*Guess*/}
             <View>
                 <Text>Higher or lower?</Text>
             </View>
-
-        </SafeAreaView>
+        </View>
     )
 }
 export default GameScreen;
 
 const styles = StyleSheet.create({
-    screen: {}
+    screen: {
+        flex: 1,
+        padding: 24,
+    },
 });
