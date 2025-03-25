@@ -1,19 +1,23 @@
-import {View, Text, StyleSheet} from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 
-const Title = () => {
-    return <Text style={styles.title}>Opponent's Guess</Text>
+export type TitleProps = {
+  children?: any;
+}
+
+const Title = ({ children }: TitleProps) => {
+  return <Text style={styles.title}>Opponent's Guess</Text>
 }
 export default Title;
 
 const styles = StyleSheet.create({
-    title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        color: '#fff',
-        textAlign: 'center',
-        borderWidth: 2,
-        borderColor: '#fff',
-        padding: 12,
-    }
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#fff',
+    textAlign: 'center',
+    borderWidth: 2,
+    borderColor: '#fff',
+    padding: 12,
+  }
 });
