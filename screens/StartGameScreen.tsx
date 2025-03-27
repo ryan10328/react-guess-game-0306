@@ -63,6 +63,25 @@ const styles = StyleSheet.create({
     marginTop: 100,
     alignItems: "center",
   },
+  inputContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 100,
+    marginHorizontal: 24,
+    padding: 16,
+    backgroundColor: "#3b021f",
+    borderRadius: 8,
+    // shadow (android only)
+    elevation: 4,
+    // shadow (ios only)
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowRadius: 6,
+    shadowOpacity: 0.35,
+  },
   numberInput: {
     height: 50,
     width: 50,

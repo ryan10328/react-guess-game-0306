@@ -2,10 +2,11 @@ import { StyleSheet, Text } from "react-native";
 
 export type InstructionTextProps = {
   children?: any;
+  style?: any;
 };
 
-const InstructionText = ({ children }: InstructionTextProps) => {
-  return <Text style={styles.instructionText}>{children}</Text>;
+const InstructionText = ({ children, style }: InstructionTextProps) => {
+  return <Text style={[styles.instructionText, style]}>{children}</Text>;
 };
 
 export default InstructionText;
