@@ -5,6 +5,7 @@ import NumberContainer from "@/components/game/NumberContainer";
 import PrimaryButton from "@/components/ui/PrimaryButton";
 import { useRouter } from "expo-router";
 import Card from "@/components/ui/Card";
+import InstructionText from "@/components/ui/InstructionText";
 
 export type GameScreenProps = {
   id: string | null;
@@ -61,7 +62,7 @@ const GameScreen = ({ id }: GameScreenProps) => {
       <Title />
       <NumberContainer>{currentGuess}</NumberContainer>
       <Card>
-        <Text>Higher or lower?</Text>
+        <InstructionText>Higher or lower?</InstructionText>
         <View>
           <PrimaryButton onPress={() => guessHandler("greater")}>
             +
