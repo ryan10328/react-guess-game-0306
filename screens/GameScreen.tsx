@@ -6,7 +6,7 @@ import PrimaryButton from "@/components/ui/PrimaryButton";
 import { useRouter } from "expo-router";
 import Card from "@/components/ui/Card";
 import InstructionText from "@/components/ui/InstructionText";
-
+import { Ionicons } from "@expo/vector-icons";
 export type GameScreenProps = {
   id: string | null;
 };
@@ -68,12 +68,12 @@ const GameScreen = ({ id }: GameScreenProps) => {
         <View style={styles.buttonsContainer}>
           <View style={styles.buttonContainer}>
             <PrimaryButton onPress={() => guessHandler("greater")}>
-              +
+              <Ionicons name="add" size={24} color="white" />
             </PrimaryButton>
           </View>
           <View style={styles.buttonContainer}>
             <PrimaryButton onPress={() => guessHandler("lower")}>
-              -
+              <Ionicons name="remove" size={24} color="white" />
             </PrimaryButton>
           </View>
         </View>
