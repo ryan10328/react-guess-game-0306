@@ -1,10 +1,10 @@
+import Card from "@/components/ui/Card";
+import InstructionText from "@/components/ui/InstructionText";
 import Title from "@/components/ui/Title";
 import { useRouter } from "expo-router";
 import React, { useState } from "react";
-import { Alert, StyleSheet, Text, TextInput, View } from "react-native";
+import { Alert, StyleSheet, TextInput, View } from "react-native";
 import PrimaryButton from "../components/ui/PrimaryButton";
-import Card from "@/components/ui/Card";
-import InstructionText from "@/components/ui/InstructionText";
 
 const StartGameScreen = () => {
   const router = useRouter();
