@@ -1,11 +1,8 @@
-import {View, Text} from 'react-native'
-import React from 'react'
+import { View, Text } from "react-native";
+import React from "react";
+import GameOverScreen from "@/screens/GameOverScreen";
 
 const Index = () => {
-    return (
-        <View>
-            <Text>Index</Text>
-        </View>
-    )
-}
+  return <GameOverScreen />;
+};
 export default Index;
