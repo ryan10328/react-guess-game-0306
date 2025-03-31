@@ -3,8 +3,18 @@ import React from "react";
 import Title from "@/components/ui/Title";
 import Colors from "@/constants/colors";
 import PrimaryButton from "@/components/ui/PrimaryButton";
+import { useRouter } from "expo-router";
 
-const GameOverScreen = () => {
+export type GameOverScreenProps = {
+  id: string | null;
+  rounds?: string;
+};
+const GameOverScreen = ({ id, rounds }: GameOverScreenProps) => {
+  const router = useRouter();
+  const handleStartNewGame = () => {
+    router.replace("/");
+  };
+
   return (
     <View style={styles.rootContainer}>
       <Title>GAME OVER</Title>
@@ -15,10 +25,10 @@ const GameOverScreen = () => {
         />
       </View>
       <Text style={styles.summaryText}>
-        Your phone needed <Text style={styles.highlight}>X</Text> rounds to
-        guess the number <Text style={styles.highlight}>Y</Text>.
+        Your phone needed <Text style={styles.highlight}>{rounds}</Text> rounds
+        to guess the number <Text style={styles.highlight}>{id}</Text>.
       </Text>
-      <PrimaryButton>Start New Game</PrimaryButton>
+      <PrimaryButton onPress={handleStartNewGame}>Start New Game</PrimaryButton>
     </View>
   );
 };
