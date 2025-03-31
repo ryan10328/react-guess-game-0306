@@ -59,7 +59,7 @@ const GameScreen = ({ id }: GameScreenProps) => {
 
   return (
     <View style={styles.screen}>
-      <Title />
+      <Title>Opponent's Guess</Title>
       <NumberContainer>{currentGuess}</NumberContainer>
       <Card>
         <InstructionText style={styles.instructionText}>
