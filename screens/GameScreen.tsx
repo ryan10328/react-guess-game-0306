@@ -1,4 +1,4 @@
-import { View, StyleSheet, Alert, Text } from "react-native";
+import { View, StyleSheet, Alert, Text, FlatList } from "react-native";
 import React, { useEffect, useState } from "react";
 import Title from "@/components/ui/Title";
 import NumberContainer from "@/components/game/NumberContainer";
@@ -7,6 +7,7 @@ import { useRouter } from "expo-router";
 import Card from "@/components/ui/Card";
 import InstructionText from "@/components/ui/InstructionText";
 import { Ionicons } from "@expo/vector-icons";
+import GuessLogItem from "@/components/game/GuessLogItem";
 export type GameScreenProps = {
   id: string | null;
 };
@@ -87,10 +88,19 @@ const GameScreen = ({ id }: GameScreenProps) => {
           </View>
         </View>
       </Card>
-      <View>
-        {guessRounds.map((guessRound) => (
-          <Text key={guessRound}>{guessRound}</Text>
-        ))}
+      <View style={styles.listContainer}>
+        <FlatList
+          data={guessRounds}
+          renderItem={(itemData) => {
+            return (
+              <GuessLogItem
+                roundNumber={guessRounds.length - itemData.index}
+                guess={itemData.item}
+              />
+            );
+          }}
+          keyExtractor={(item) => item.toString()}
+        />
       </View>
     </View>
   );
@@ -110,5 +120,9 @@ const styles = StyleSheet.create({
   },
   instructionText: {
     marginBottom: 12,
+  },
+  listContainer: {
+    flex: 1,
+    padding: 16,
   },
 });
