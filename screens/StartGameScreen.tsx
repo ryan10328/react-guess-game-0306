@@ -3,10 +3,17 @@ import InstructionText from "@/components/ui/InstructionText";
 import Title from "@/components/ui/Title";
 import { useRouter } from "expo-router";
 import React, { useState } from "react";
-import { Alert, StyleSheet, TextInput, View } from "react-native";
+import {
+  Alert,
+  StyleSheet,
+  TextInput,
+  View,
+  useWindowDimensions,
+} from "react-native";
 import PrimaryButton from "../components/ui/PrimaryButton";
 
 const StartGameScreen = () => {
+  const { width, height } = useWindowDimensions();
   const router = useRouter();
   const [enteredNumber, setEnteredNumber] = useState("");
   const numberInputHandler = (text: string) => {
@@ -29,8 +36,10 @@ const StartGameScreen = () => {
     router.replace(`/game/${chosenNumber}`);
   };
 
+  const marginTopDistance = width < 380 ? 30 : 100;
+
   return (
-    <View style={styles.rootContainer}>
+    <View style={[styles.rootContainer, { marginTop: marginTopDistance }]}>
       <Title>Guess My Number</Title>
       <Card>
         <InstructionText>Enter a Number</InstructionText>
